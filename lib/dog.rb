@@ -74,7 +74,9 @@ class Dog
   end
 
   def self.new_from_db(row)
-    binding.pry
+    data = self.xfer_to_hash(row)
+    puppy = Dog.new(data)
+    puppy
   end
 
   def self.find_by_name(name)
