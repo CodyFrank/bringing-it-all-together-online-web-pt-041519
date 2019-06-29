@@ -5,5 +5,5 @@ class Dog
     @id, @name, @breed = id, name, breed
   end
 
-  
+
 end
