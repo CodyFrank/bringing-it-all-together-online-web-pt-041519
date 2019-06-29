@@ -68,6 +68,9 @@ class Dog
     if !dog.empty?
       puppy = Dog.new(dog_data)
     else
+      puppy = self.create(dog_data)
+    end
+    puppy
   end
 
 end
