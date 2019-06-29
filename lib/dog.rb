@@ -41,11 +41,21 @@ class Dog
     new_dog
   end
 
+  def xfer_to_hash(array)
+    hash = {}
+    hash[:id] = array[0]
+    hash[:name] = array[1]
+    hash[:breed] = array[2]
+    return hash
+  end
+
   def self.find_by_id(id)
     sql = <<-SQL
     SELECT * FROM dogs WHERE id = ?
     SQL
     dog = DB[:conn].execute(sql, id)[0]
+    
+    new_dog = Dog.new()
   end
 
 end
