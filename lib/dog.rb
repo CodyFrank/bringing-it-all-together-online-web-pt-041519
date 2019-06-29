@@ -64,9 +64,10 @@ class Dog
     SELECT * FROM dogs WHERE name = ? AND breed = ?
     SQL
     dog = DB[:conn].execute(sql, name, breed)
+    dog_data = self.xfer_to_hash(dog[0])
     if !dog.empty?
-      dog_data = self.xfer_to_hash(dog[0])
-      self.create(dog_data)
+      puppy = Dog.new(dog_data)
+    else
   end
 
 end
