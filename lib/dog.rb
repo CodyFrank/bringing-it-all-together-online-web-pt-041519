@@ -41,7 +41,7 @@ class Dog
     new_dog
   end
 
-  def xfer_to_hash(array)
+  def self.xfer_to_hash(array)
     hash = {}
     hash[:id] = array[0]
     hash[:name] = array[1]
@@ -54,7 +54,7 @@ class Dog
     SELECT * FROM dogs WHERE id = ?
     SQL
     dog = DB[:conn].execute(sql, id)[0]
-    info = xfer_to_hash(dog)
+    info = self.xfer_to_hash(dog)
     puppy = Dog.new(info)
     puppy
   end
