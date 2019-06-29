@@ -73,4 +73,14 @@ class Dog
     puppy
   end
 
+  def self.find_by_name(name)
+    sql = <<-SQL
+    SELECT * FROM dogs WHERE name = ?
+    SQL
+    array = DB[:conn].execute(sql, name)[0]
+    data = self.xfer_to_hash(array)
+    puppy = Dog.new(data)
+    puppy
+  end
+
 end
