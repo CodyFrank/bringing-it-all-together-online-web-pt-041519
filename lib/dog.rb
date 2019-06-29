@@ -68,7 +68,7 @@ class Dog
       dog_data = self.xfer_to_hash(dog[0])
       puppy = Dog.new(dog_data)
     else
-      puppy = self.create(name, breed)
+      puppy = self.create(name: name, breed: breed)
     end
     puppy
   end
