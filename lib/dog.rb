@@ -54,8 +54,8 @@ class Dog
     SELECT * FROM dogs WHERE id = ?
     SQL
     dog = DB[:conn].execute(sql, id)[0]
-
-    new_dog = Dog.new()
+    info = xfer_to_hash(dog)
+    puppy = Dog.new(info)
   end
 
 end
