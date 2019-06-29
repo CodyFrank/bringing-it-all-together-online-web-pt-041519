@@ -56,6 +56,7 @@ class Dog
     dog = DB[:conn].execute(sql, id)[0]
     info = xfer_to_hash(dog)
     puppy = Dog.new(info)
+    puppy
   end
 
 end
